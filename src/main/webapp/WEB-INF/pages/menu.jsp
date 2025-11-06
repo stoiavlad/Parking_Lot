@@ -8,9 +8,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/"))
-eq '/about.jsp' ? ' active' : ''}"
-                           aria-current="page" href="${pageContext.request.contextPath}/about.jsp">About</a>
+                        <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/"))eq '/about.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/about.jsp">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/"))eq '/Cars' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/Cars">Cars</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
@@ -19,12 +20,13 @@ eq '/about.jsp' ? ' active' : ''}"
                         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-               <ul class="navbar-nav">
-                   <li class="nav-item">
-                       <a class="nav-link" href="${pageContext.request.contextPath}/Login">Login</a>
-                   </li>
-               </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/Login">Login</a>
+                    </li>
+                </ul>
             </div>
         </div>
+
     </nav>
 </header>
