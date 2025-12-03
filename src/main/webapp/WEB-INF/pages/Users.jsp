@@ -4,9 +4,22 @@
 
 <t:pageTemplate pageTitle="Users">
     <h1>Users</h1>
+
+    <!-- ADD USER button, visible ONLY if the user has WRITE_USERS -->
+    <c:if test="${pageContext.request.isUserInRole('WRITE_USERS')}">
+        <a href="${pageContext.request.contextPath}/AddUser" class="btn btn-primary mb-3">
+            Add User
+        </a>
+    </c:if>
+
     <div class="container text-center">
+        <div class="row fw-bold mb-2">
+            <div class="col">Username</div>
+            <div class="col">Email</div>
+        </div>
+
         <c:forEach var="user" items="${users}">
-            <div class="row">
+            <div class="row mb-2">
                 <div class="col">
                         ${user.username}
                 </div>
@@ -16,4 +29,5 @@
             </div>
         </c:forEach>
     </div>
+
 </t:pageTemplate>

@@ -2,6 +2,8 @@ package org.parking.parking_lot;
 
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.HttpConstraint;
+import jakarta.servlet.annotation.ServletSecurity;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,6 +16,7 @@ import org.parking.parkinglot.ejb.UserBean;
 import java.io.IOException;
 import java.util.List;
 
+@ServletSecurity(@HttpConstraint(rolesAllowed = {"WRITE_CARS"}))
 @WebServlet(name = "EditCar", value = "/EditCar")
 public class EditCar extends HttpServlet {
 
@@ -24,7 +27,9 @@ public class EditCar extends HttpServlet {
     CarsBean carsBean;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
         List<UserDto> users = usersBean.findAllUsers();
         req.setAttribute("users", users);
 
@@ -32,7 +37,8 @@ public class EditCar extends HttpServlet {
         CarDto car = carsBean.findById(carId);
         req.setAttribute("car", car);
 
-        req.getRequestDispatcher("/WEB-INF/pages/editCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/pages/editCar.jsp")
+                .forward(req, resp);
     }
 
     @Override
