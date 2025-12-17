@@ -1,4 +1,4 @@
-package org.parking.parking_lot;
+package org.parking.parkinglot;
 
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
@@ -8,10 +8,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.parking.parkinglot.common.CarDto;
-import org.parking.parkinglot.common.UserDto;
-import org.parking.parkinglot.ejb.CarsBean;
-import org.parking.parkinglot.ejb.UserBean;
+import org.common.CarDto;
+import org.common.UserDto;
+import org.ejb.CarsBean;
+import org.ejb.UserBean;
 
 import java.io.IOException;
 import java.util.List;

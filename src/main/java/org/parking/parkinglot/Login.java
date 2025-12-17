@@ -1,4 +1,4 @@
-package org.parking.parking_lot;
+package org.parking.parkinglot;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

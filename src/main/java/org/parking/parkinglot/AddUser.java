@@ -1,4 +1,4 @@
-package example.parkinglot.parking;
+package org.parking.parkinglot;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import jakarta.inject.Inject;
-import org.parking.parkinglot.ejb.UserBean;
+import org.ejb.UserBean;
 
 import java.io.IOException;
 import java.util.Arrays;

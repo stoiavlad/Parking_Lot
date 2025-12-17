@@ -1,4 +1,4 @@
-package org.parking.parkinglot.common;
+package org.common;
 
 public class UserDto {
     private Long id;

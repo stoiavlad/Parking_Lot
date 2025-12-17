@@ -1,4 +1,4 @@
-package org.parking.parkinglot.ejb;
+package org.ejb;
 
 import jakarta.ejb.Stateless;
 import java.security.MessageDigest;

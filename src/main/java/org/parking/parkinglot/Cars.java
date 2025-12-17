@@ -1,12 +1,12 @@
-package org.parking.parking_lot;
+package org.parking.parkinglot;
 
 import jakarta.annotation.security.DeclareRoles;
 import jakarta.inject.Inject;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import org.parking.parkinglot.common.CarDto;
-import org.parking.parkinglot.ejb.CarsBean;
+import org.common.CarDto;
+import org.ejb.CarsBean;
 
 import java.io.IOException;
 import java.util.ArrayList;

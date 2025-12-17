@@ -1,4 +1,4 @@
-package org.parking.parkinglot.common;
+package org.common;
 
 public class CarDto {
     Long id;
@@ -33,3 +33,7 @@ public class CarDto {
 
     //  public Long getOwnerId() { return ownerId; }
 }
+
+
+
+

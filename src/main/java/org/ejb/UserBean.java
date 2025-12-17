@@ -1,4 +1,4 @@
-package org.parking.parkinglot.ejb;
+package org.ejb;
 
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
@@ -6,12 +6,13 @@ import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+
+import org.common.UserDto;
 import org.example.parkinglot.entities.User;
 import org.example.parkinglot.entities.UserGroup;
-import org.parking.parkinglot.common.UserDto;
-
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -63,7 +64,6 @@ public class UserBean {
         user.setUsername(username);
         user.setEmail(email);
 
-
         String hashedPassword = passwordBean.convertToSha256(password);
         user.setPassword(hashedPassword);
 
@@ -84,5 +84,20 @@ public class UserBean {
 
             entityManager.persist(userGroup);
         }
+    }
+
+    public List<String> findUsernamesByUserIds(Collection<Long> userIds) {
+        LOG.info("findUsernamesByUserIds");
+
+        if (userIds == null || userIds.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        return entityManager.createQuery(
+                        "SELECT u.username FROM User u WHERE u.id IN :ids",
+                        String.class
+                )
+                .setParameter("ids", userIds)
+                .getResultList();
     }
 }
