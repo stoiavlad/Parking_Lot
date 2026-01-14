@@ -12,9 +12,7 @@ import org.example.parkinglot.entities.Car;
 import org.example.parkinglot.entities.CarPhoto;
 import org.example.parkinglot.entities.User;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Logger;
 
 @Stateless
@@ -159,4 +157,22 @@ public class CarsBean {
                 photo.getFileContent()
         );
     }
+
+    public void sortCar(Long carId) {
+        LOG.info("sortCar");
+        Car car = entityManager.find(Car.class, carId);
+        Scanner sc=new Scanner(System.in);
+        Scanner sc1=new Scanner(System.in);
+        int n = 0;
+        String str[]=new String[n];
+        for(int i=0; i<n ;i++)
+        {
+            str[i]=sc1.nextLine();
+        }
+    Arrays.sort(str,String.CASE_INSENSITIVE_ORDER);
+    }
+
+
+
+
 }
